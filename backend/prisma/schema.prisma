@@ -1,0 +1,29 @@
+// Prisma schema for Mini Event Tracker
+datasource db {
+  provider = "sqlite"  // Use "postgresql" in production and set DATABASE_URL accordingly
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  events    Event[]
+  createdAt DateTime @default(now())
+}
+
+model Event {
+  id          Int      @id @default(autoincrement())
+  title       String
+  dateTime    DateTime
+  location    String
+  description String?
+  publicId    String?  @unique
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime @default(now())
+}
