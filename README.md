@@ -8,7 +8,7 @@ A web app where users can create an account, log in, and manage their events. Us
 - **Backend:** Node.js + Express  
 - **Database:** PostgreSQL (with Prisma ORM)  
 - **Authentication:** JWT (JSON Web Tokens)  
-- **Deployment:** Frontend on Vercel, Backend on Railway, PostgreSQL on Railway / ElephantSQL  
+- 
 
 ### Why this stack?
 - **React:** Component-based, responsive UI  
